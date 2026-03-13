@@ -1,0 +1,54 @@
+{
+  "name": "@neilguuu/uskills",
+  "version": "0.1.0",
+  "description": "A CLI tool to manage and link agent skills across your workspace.",
+  "type": "module",
+  "bin": {
+    "uskills": "bin/cli.mjs"
+  },
+  "files": [
+    "dist",
+    "bin",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "node --experimental-strip-types src/cli.ts",
+    "build": "tsup src/cli.ts --format esm --clean --minify --shims",
+    "prepublishOnly": "pnpm build",
+    "test": "vitest",
+    "type-check": "tsc --noEmit"
+  },
+  "lint-staged": {
+    "src/**/*.ts": "prettier --write",
+    "scripts/**/*.ts": "prettier --write",
+    "tests/**/*.ts": "prettier --write"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hunter-Gu/uskills.git"
+  },
+  "homepage": "https://github.com/Hunter-Gu/uskills#readme",
+  "bugs": {
+    "url": "https://github.com/Hunter-Gu/uskills/issues"
+  },
+  "keywords": [],
+  "author": "Neil Gu <nail.gu.hunter@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "husky": "^9.1.7",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.0"
+  },
+  "dependencies": {
+    "@clack/prompts": "^1.1.0",
+    "c12": "^4.0.0-beta.3",
+    "gray-matter": "^4.0.3",
+    "picocolors": "^1.1.1"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "pnpm@10.17.1"
+}
